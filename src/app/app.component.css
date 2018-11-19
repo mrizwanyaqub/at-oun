@@ -1,0 +1,15 @@
+.logo {
+  content: url("/assets/imgs/ounass.svg");
+  width: 20%;
+  max-width: 300px;
+  min-width: 70px;
+}
+
+.content {
+  width: 900px;
+}
+
+.sideBar {
+  width: 15% !important;
+  min-width: 135px;
+}

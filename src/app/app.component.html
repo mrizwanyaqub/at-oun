@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutAlign="center">
+  <div fxLayoutAlign="center">
+    <img class="logo"/>
+  </div>
+  <div fxLayoutAlign="center">
+    <div fxLayout.gt-sm="row" fxLayout.ls-md="column" class="content">
+      <div class="sideBar" fxHide.lt-md="true">
+        <span>Filter By Color</span>
+        <at-colors (colorSelected)="handleColorSelected($event)"></at-colors>
+      </div>
+      <div fxHide.gt-sm="true" fxLayoutAlign="center">
+        <span (click)="showColors()" [fxShow]="!showColorFilter">Filter By Color</span>
+        <div [fxShow]="showColorFilter">
+          <at-colors (colorSelected)="handleColorSelected($event)" layout="row wrap"></at-colors>
+        </div>
+      </div>
+      <div *ngIf="itemsFound; else noItems">
+        <div fxLayout="row wrap" fxLayoutAlign="center">
+          <at-product *ngFor="let prod of products" [product]="prod"></at-product>
+        </div>
+      </div>
+      <ng-template #noItems>
+       <span fxFlexAlign="center">Sorry! No item found with the filter.</span>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<at-loader [loading]="loading"></at-loader>
