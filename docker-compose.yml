@@ -1,0 +1,4 @@
+app:
+  image: mrizwanyaqub/at-oun
+  ports:
+    - 3001:4200
