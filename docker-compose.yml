@@ -1,4 +1,8 @@
-app:
-  image: mrizwanyaqub/at-oun
-  ports:
-    - 3001:4200
+version: '3.1'
+
+services:
+    app:
+        image: 'mrizwanyaqub/at-oun'
+        build: '.'
+        ports:
+            - 3001:80
